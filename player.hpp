@@ -7,7 +7,7 @@ struct Player
     std::string name;
     char symbole;
 
-    void create_player(char existing_symbol = '\0');
+    void joueur(char existing_symbol = '\0');
 };
 
 #endif

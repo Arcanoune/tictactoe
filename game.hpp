@@ -4,8 +4,8 @@
 #include <array>
 #include "player.hpp"
 
-void display_board(const std::array<char, 9>& board);
+void plateau(const std::array<char, 9>& board);
 
-void play_game(Player& player1, Player& player2, bool vs_ai);
+void jeu(Player& player1, Player& player2, bool vs_ai);
 
 #endif

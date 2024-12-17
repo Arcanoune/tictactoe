@@ -2,26 +2,31 @@
 #include <limits>
 #include "player.hpp"
 
-void Player::create_player(const char existing_symbol)
+void Player::joueur(const char existing_symbol)
 {
     std::cout << "Pseudo : ";
     std::cin >> name;
 
     do
     {
-        std::cout << "Symbole : ";
+        std::cout << "Symbole (entre b et z) : ";
         std::cin >> symbole;
 
         if (std::cin.fail() || std::cin.peek() != '\n')
         {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Plus court chef" << std::endl;
+            std::cout << "nop plus court" << std::endl;
             symbole = '\0';
         }
-        else if (symbole == existing_symbol)
+        else if (symbole < 'b' || symbole > 'z') 
         {
-            std::cout << "Déjà pris" << std::endl;
+            std::cout << "lettre de l'alphabet sauf a" << std::endl;
+            symbole = '\0';
+        }
+        else if (symbole == existing_symbol) 
+        {
+            std::cout << "symbole pris" << std::endl;
             symbole = '\0';
         }
     } while (symbole == '\0');

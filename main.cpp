@@ -15,20 +15,20 @@ int main()
     } while (mode != 1 && mode != 2);
 
     Player player1;
-    player1.create_player();
+    player1.joueur();
 
     Player player2;
     if (mode == 1)
     {
-        player2.create_player(player1.symbole);
+        player2.joueur(player1.symbole);
     }
     else
     {
         player2.name = "IA";
-        player2.symbole = 'O';
+        player2.symbole = 'a';
     }
 
-    play_game(player1, player2, mode == 2);
+    jeu(player1, player2, mode == 2);
 
     return 0;
 }
